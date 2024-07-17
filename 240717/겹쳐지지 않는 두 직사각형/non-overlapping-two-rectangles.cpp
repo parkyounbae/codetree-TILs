@@ -23,15 +23,13 @@ void set_second_rect(int r, int c, int f_r1, int f_c1, int f_r2, int f_c2, int a
 
     for(int i=r ; i<n ; i++) {
         for(int j=c ; j<m ; j++) {
-            if(i >= f_r1 && i <=f_r2 && j >= f_c1 && j <=f_c2) {
-                //dd
-                continue;
-            } else {
+            if(!(f_r1 < r && f_r2 > r)&&!(f_r1 < i && f_r2 > i)&&!(f_c1 < c && f_c2 > c)&&!(f_c1 < j && f_c2 > j)) {
                 int temp = get_sum_rect(r,c,i,j);
                 if(result < amount + temp) {
                     result = amount + temp;
                 }
-            }
+                
+            } 
         }
     }
 }
