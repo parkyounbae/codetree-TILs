@@ -27,9 +27,9 @@ void set_second_rect(int r, int c, int f_r1, int f_c1, int f_r2, int f_c2, int a
                 int temp = get_sum_rect(r,c,i,j);
                 if(result < amount + temp) {
                     result = amount + temp;
-                    cout << result << endl;
-                    cout << f_r1 << " " << f_c1 << " " << f_r2 << " " << f_c2 << endl;
-                    cout << r << " " << c << " " << i << " " << j << endl;
+                    // cout << result << endl;
+                    // cout << f_r1 << " " << f_c1 << " " << f_r2 << " " << f_c2 << endl;
+                    // cout << r << " " << c << " " << i << " " << j << endl;
                 }
                 
             } 
