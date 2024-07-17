@@ -20,6 +20,7 @@ void check(int r, int c, int current_r, int current_c, int move_1, int move_2,in
         if(current_r+move_1 >= n || current_c-move_1 < 0) {
             return;
         }
+        
 
         int temp = amount;
 
@@ -31,13 +32,16 @@ void check(int r, int c, int current_r, int current_c, int move_1, int move_2,in
             temp += arr[current_r+i][current_c+i];
         }
 
-        if(temp > result) {
+        if(temp >= result) {
+            cout << r << " " << c << endl;
+            cout << current_r+move_1 << " " << current_c-move_1 << ", result: " << temp << endl;
+
             result = temp;
         }
     }
 
     if(dir == 1) {
-        check(r,c,current_r-1, current_c+1, move_1 + 1, move_2,1,amount+arr[current_r][current_c]);
+        check(r,c,current_r-1, current_c+1, move_1+1, move_2,1,amount+arr[current_r][current_c]);
         check(r,c,current_r-1, current_c-1, move_1, move_2+1,2,amount+arr[current_r][current_c]);
     } else if(dir == 2) {
         check(r,c,current_r-1, current_c-1, move_1, move_2+1,2,amount+arr[current_r][current_c]);
