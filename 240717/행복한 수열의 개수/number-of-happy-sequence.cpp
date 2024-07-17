@@ -9,6 +9,10 @@ int check_garo(int index) {
     int current_num = arr[index][0];
     int count = 1;
 
+    if(count >= m) {
+            return 1;
+        }
+
     for(int i=1 ; i<n ; i++) {
         if(current_num == arr[index][i]) {
             count ++;
@@ -27,6 +31,10 @@ int check_sero(int index) {
 
     int current_num = arr[0][index];
     int count = 1;
+
+    if(count >= m) {
+            return 1;
+        }
 
     for(int i=1 ; i<n ; i++) {
         if(current_num == arr[i][index]) {
