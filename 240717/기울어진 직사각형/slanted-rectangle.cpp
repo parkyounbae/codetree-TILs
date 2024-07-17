@@ -28,13 +28,16 @@ void check(int r, int c, int current_r, int current_c, int move_1, int move_2,in
             temp += arr[current_r+i][current_c-i];
         }
 
+        current_r = current_r + move_1;
+        current_c = current_c - move_1;
+
         for(int i=0 ; i<move_2 ; i++) {
             temp += arr[current_r+i][current_c+i];
         }
 
         if(temp >= result) {
-            cout << r << " " << c << endl;
-            cout << current_r+move_1 << " " << current_c-move_1 << ", result: " << temp << endl;
+            //cout << r << " " << c << endl;
+            //cout << current_r << " " << current_c << ", result: " << temp << endl;
 
             result = temp;
         }
@@ -65,7 +68,7 @@ int main() {
 
     for(int i=0 ; i<n ; i++) {
         for(int j=0 ; j<n ; j++) {
-            check(i,j,i-1,j+1,1,0,1,0);
+            check(i,j,i-1,j+1,1,0,1,arr[i][j]);
         }
     }
 
