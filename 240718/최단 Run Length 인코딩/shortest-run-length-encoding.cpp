@@ -9,11 +9,18 @@ int length;
 int get_length() {
     char index = arr[0];
     int result = 2;
+    int ten = 1;
     for(int i=1 ; i<length ; i++) {
         if(arr[i] != index) {
             index = arr[i];
             result += 2;
+            ten = 1;
+        } else {
+            ten++;
         }
+    }
+    if(ten == 10) {
+        result = result + 1;
     }
 
 
