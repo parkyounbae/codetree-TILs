@@ -2,8 +2,8 @@
 using namespace std;
 
 int n,t;
-int line1[100];
-int line2[100];
+int line1[201];
+int line2[201];
 
 void tick() {
     int line1_temp = line1[n-1];
