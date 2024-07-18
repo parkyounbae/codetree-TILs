@@ -40,7 +40,7 @@ void move1(int r, int c, int m1, int m2, int m3, int m4) {
     arr[index_r+1][index_c+1] = temp3;
 }
 
-void move2(int r1, int c1, int r2, int c2, int temp) {
+void move2(int r, int c, int m1, int m2, int m3, int m4) {
     int index_r = r;
     int index_c = c;
 
