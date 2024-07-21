@@ -46,7 +46,7 @@ void gravity() {
                 }
             }
 
-            for(int j=end ; j>=start ; j--) {
+            for(int j=end ; j>0 ; j--) {
                 if(j-(end-start+1)>0 ) {
                     arr[j][i] = arr[j-(end-start+1)][i];
                 } else {
@@ -54,9 +54,7 @@ void gravity() {
                 }
                 
             }
-            for(int j=start-1 ; j>0 ; j--) {
-                arr[j][i] = 0;
-            }
+            
         }
     }
 }
