@@ -132,6 +132,11 @@ int main() {
         }
     }
 
+    if(m==1) {
+        cout << 0 << endl;
+        return 0;
+    }
+
     for(int i=0 ; i<k ; i++) {
         bomb();
         rotate();
