@@ -14,14 +14,14 @@ int main() {
     int s1, e1;
     cin >> s1 >> e1;
 
-    for(int i=s1 ; i<=e1 ; i++) {
+    for(int i=s1 ; i<=n ; i++) {
         arr[i] = arr[i+(e1-s1+1)];
     }
     n = n-(e1-s1+1);
 
     cin >> s1 >> e1;
 
-    for(int i=s1 ; i<=e1 ; i++) {
+    for(int i=s1 ; i<=n ; i++) {
         arr[i] = arr[i+(e1-s1+1)];
     }
     n = n-(e1-s1+1);
