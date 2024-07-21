@@ -19,9 +19,8 @@ int main() {
     if(command == 'R') {
         for(int i=1 ; i<=4 ; i++) {
             int index_of_result = 4;
-            int temp = arr[i][4];
-            result[i][index_of_result--] = temp;
-            for(int j=3 ; j>0 ; j--) {
+            int temp = -1;
+            for(int j=4 ; j>0 ; j--) {
                 if(arr[i][j] == 0) {
                     continue;
                 } else if(arr[i][j] == temp) {
@@ -36,9 +35,8 @@ int main() {
     } else if(command == 'L') {
         for(int i=1 ; i<=4 ; i++) {
             int index_of_result = 1;
-            int temp = arr[i][1];
-            result[i][index_of_result++] = temp;
-            for(int j=2 ; j<5 ; j++) {
+            int temp = -1;
+            for(int j=1 ; j<5 ; j++) {
                 if(arr[i][j] == 0) {
                     continue;
                 } else if(arr[i][j] == temp) {
@@ -53,9 +51,8 @@ int main() {
     } else if(command == 'U') {
         for(int i=1 ; i<=4 ; i++) {
             int index_of_result = 1;
-            int temp = arr[1][i];
-            result[index_of_result++][i] = temp;
-            for(int j=2 ; j<5 ; j++) {
+            int temp = -1;
+            for(int j=1 ; j<5 ; j++) {
                 if(arr[j][i] == 0) {
                     continue;
                 } else if(arr[j][i] == temp) {
@@ -70,9 +67,8 @@ int main() {
     } else {
         for(int i=1 ; i<=4 ; i++) {
             int index_of_result = 4;
-            int temp = arr[4][i];
-            result[index_of_result--][i] = temp;
-            for(int j=3 ; j>0 ; j--) {
+            int temp = -1;
+            for(int j=4 ; j>0 ; j--) {
                 if(arr[j][i] == 0) {
                     continue;
                 } else if(arr[j][i] == temp) {
