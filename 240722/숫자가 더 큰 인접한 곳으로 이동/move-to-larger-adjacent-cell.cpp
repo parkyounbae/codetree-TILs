@@ -24,10 +24,10 @@ int main() {
 
     while(true) {
         result.push_back(arr[r][c]);
-        if(r-1 >=0 n && arr[r-1][c] > arr[r][c]) {
-                r = r+1;
-            } else if(r+1 < n && arr[r+1][c] > arr[r][c]) {
+        if(r-1 >=0  && arr[r-1][c] > arr[r][c]) {
                 r = r-1;
+            } else if(r+1 < n && arr[r+1][c] > arr[r][c]) {
+                r = r+1;
             } else if(c-1 >= 0 && arr[r][c-1] > arr[r][c]) {
                 c = c-1;
             } else if(c+1 < n && arr[r][c+1] > arr[r][c]) {
