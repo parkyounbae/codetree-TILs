@@ -8,9 +8,15 @@ int temp_arr[201][201];
 
 void delete_minus() {
     for(int c=0 ; c<n ; c++) {
+        if(arr[n-1][c] == 0) {
+            continue;
+        }
         for(int r=n-1 ; r>=0 ; r--) {
             int start = -1;
             int end = -1;
+            if(arr[r][c] == 0) {
+                continue;
+            }
             if(arr[r][c] == -1) {
                 start = r;
 
@@ -89,6 +95,9 @@ void bomb() {
         for(int c=0 ; c<n ; c++) {
             int temp = arr[n-1][c];
             int count = 1;
+            if(arr[n-1][c] == 0) {
+                continue;
+            }
             for(int r=n-2 ; r>=0 ; r--) {
 
                 if(arr[r][c] == 0) {
@@ -122,6 +131,9 @@ void bomb() {
 }
 
 int main() {
+    ios_base :: sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
     // 여기에 코드를 작성해주세요.
     cin >> n >> m >> k;
     for(int i=0 ; i<n ; i++) {
