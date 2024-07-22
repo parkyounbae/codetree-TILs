@@ -21,6 +21,11 @@ int main() {
     int current_r = r;
     int current_c = c;
 
+    if(arr[r+1][c] == '#' && '#' == arr[r-1][c] && '#' == arr[r][c+1] && '#' == arr[r][c-1] ) {
+        cout << "-1" << endl;
+        return 0;
+    }
+
     while(true) {
         if(time!=0 && current_c==c && current_r==r) {
             time = -1;
