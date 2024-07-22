@@ -17,6 +17,7 @@ void delete_minus() {
                 for(int i=start ; i>=0 ; i--) {
                     if(arr[i][c] != -1) {
                         end = i+1;
+                        break;
                     }
                 }
 
@@ -49,12 +50,15 @@ void delete_zero() {
                 for(int i=start ; i>=0 ; i--) {
                     if(arr[i][c] != 0) {
                         end = i+1;
+                        break;
                     }
                 }
 
                 if(end == -1) {
                     end = 0;
                 }
+
+                
 
                 for(int i=start ; i>=0 ; i--) {
                     if(i-(start - end + 1)>=0) {
@@ -75,7 +79,7 @@ void rotate() {
     // 배열 90도 회전
     for(int i=0; i<n; i++)
         for(int j=0; j<n; j++)
-            temp_arr[i][j] = arr[n - j -1][n-i-1];
+            temp_arr[j][n-1-i] = arr[i][j];
 
     // 배열 값 복사
     memmove(arr, temp_arr, sizeof(arr));
@@ -138,25 +142,9 @@ int main() {
 
     for(int i=0 ; i<k ; i++) {
         bomb();
-//        cout << "after bomb\n";
-//        for(int i=0 ; i<n ; i++) {
-//            for(int j=0 ; j<n ; j++) {
-//                cout << arr[i][j] << " ";
-//            }
-//            cout << "\n";
-//        }
-//        cout << "\n";
-//        cout << "\n";
+        
         rotate();
-//        cout << "after rotate\n";
-//        for(int i=0 ; i<n ; i++) {
-//            for(int j=0 ; j<n ; j++) {
-//                cout << arr[i][j] << " ";
-//            }
-//            cout << "\n";
-//        }
-//        cout << "\n";
-//        cout << "\n";
+        
     }
     bomb();
 
