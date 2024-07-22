@@ -7,7 +7,9 @@ int arr[101][101];
 void check() {
     int index = 0;
     for(int i=1 ; i<=n ; i++) {
+
         bool is_blocked = false;
+
         for(int j=k ; j<k+m ; j++) {
             if(arr[i][j] == 1) {
                 index = i - 1;
@@ -17,6 +19,8 @@ void check() {
         }
         if(is_blocked) {
             break;
+        } else if(!is_blocked && i==n) {
+            index = n;
         }
     }
 
