@@ -33,8 +33,6 @@ void delete_minus() {
                     }
                 }
             }
-
-
         }
     }
 }
@@ -57,8 +55,6 @@ void delete_zero() {
                 if(end == -1) {
                     end = 0;
                 }
-
-                
 
                 for(int i=start ; i>=0 ; i--) {
                     if(i-(start - end + 1)>=0) {
@@ -101,13 +97,12 @@ void bomb() {
 
                 if(temp == arr[r][c]) {
                     count ++;
-
                     if(count >= m) {
                         for(int i=0 ; i<count && arr[r-i][c] != -1; i++) {
                             arr[r+i][c] = -1;
                             total++;
                         }
-                        count ++;
+                        // count ++;
                     }
                 }
                 else {
@@ -142,12 +137,12 @@ int main() {
 
     for(int i=0 ; i<k ; i++) {
         bomb();
+
         
         rotate();
         
     }
     bomb();
-
 
     int result = 0;
 
@@ -158,11 +153,6 @@ int main() {
             }
         }
     }
-
     cout << result << endl;
-
-
-
-
     return 0;
 }
