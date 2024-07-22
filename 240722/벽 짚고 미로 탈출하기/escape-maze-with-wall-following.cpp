@@ -25,11 +25,16 @@ int main() {
         cout << "-1" << endl;
         return 0;
     }
+    
+    int kill_count = 0;
 
     while(true) {
         if(time!=0 && current_c==c && current_r==r) {
-            time = -1;
-            break;
+            if(kill_count == 1) {
+                time = -1;
+                break;
+            }
+            kill_count++;
         }
 
         if(current_c>n || current_c<=0 || current_r>n || current_r<=0) {
