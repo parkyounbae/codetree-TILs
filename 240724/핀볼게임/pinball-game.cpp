@@ -6,14 +6,24 @@ int arr[100][100];
 
 int dir_r[4] = {-1, 1, 0, 0};
 int dir_c[4] = {0,0,-1,1};
+bool check[100][100];
 
 int result = 0;
+
+void clear_check() {
+    for(int i=0 ; i<n ; i++) {
+        for(int j=0 ; j<n ; j++) {
+            check[i][j] = false;
+        }
+    }
+}
 
 int pin_ball(int start_r, int start_c, int start_dir) {
     int time = 0;
     int current_r = start_r;
     int current_c = start_c;
     int current_dir = start_dir;
+    clear_check();
     while(true) {
         if(time > 100000) {
             return -1;
@@ -27,6 +37,11 @@ int pin_ball(int start_r, int start_c, int start_dir) {
         }
 
         if(arr[current_r][current_c] == 1) {
+            if(check[current_r][current_c]) {
+                return -1;
+            } else {
+                check[current_r][current_c] = true;
+            }
             if(current_dir == 0) {
                 current_dir =3;
             } else if(current_dir == 1) {
@@ -37,6 +52,11 @@ int pin_ball(int start_r, int start_c, int start_dir) {
                 current_dir =0;
             }
         } else if(arr[current_r][current_c] == 2) {
+            if(check[current_r][current_c]) {
+                return -1;
+            } else {
+                check[current_r][current_c] = true;
+            }
             if(current_dir == 0) {
                 current_dir =2;
             } else if(current_dir == 1) {
