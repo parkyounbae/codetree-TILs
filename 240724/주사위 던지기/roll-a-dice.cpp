@@ -98,7 +98,7 @@ int main() {
             current_num = dice[0];
             arr[current_r][current_c] = current_num;
             result += current_num;
-        } else if (check(current_r, current_c+1)){
+        } else if (command == 'R' && check(current_r, current_c+1)){
             current_c++;
             if(arr[current_r][current_c] != 0) {
                 result -= arr[current_r][current_c];
@@ -109,7 +109,10 @@ int main() {
             result += current_num;
         }
     }
+
     
+
+
     cout << result << endl;
 
     return 0;
