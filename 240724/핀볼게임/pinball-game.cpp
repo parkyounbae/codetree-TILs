@@ -15,6 +15,9 @@ int pin_ball(int start_r, int start_c, int start_dir) {
     int current_c = start_c;
     int current_dir = start_dir;
     while(true) {
+        if(time > 10000) {
+            return -1;
+        } 
         time++;
         current_r = current_r + dir_r[current_dir];
         current_c = current_c + dir_c[current_dir];
