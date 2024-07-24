@@ -9,14 +9,14 @@ int dir_c[4] = {0,0,-1,1};
 
 int result = 0;
 
-
-
 int pin_ball(int start_r, int start_c, int start_dir) {
     int time = 0;
     int current_r = start_r;
     int current_c = start_c;
     int current_dir = start_dir;
     while(true) {
+
+        // cout << time << "current : " << current_r << " " << current_c << " " << current_dir << endl;
 
         time++;
         current_r = current_r + dir_r[current_dir];
@@ -49,14 +49,16 @@ int pin_ball(int start_r, int start_c, int start_dir) {
         }
     }
 
+    // cout << "time : " << time << ", start : "<< start_r << " " << start_c << " " << start_dir<<", current : " << current_r << " " << current_c << " " << current_dir << endl;
+
     return time;
 }
 
 int main() {
     // 여기에 코드를 작성해주세요.
     cin >> n;
-    for(int i=0 ; i<n ; i++) {
-        for(int j=0 ; j<n ; j++) {
+    for(int i=1 ; i<=n ; i++) {
+        for(int j=1 ; j<=n ; j++) {
             cin >> arr[i][j];
         }
     }
