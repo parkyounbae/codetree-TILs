@@ -25,11 +25,6 @@ int up(int distance) {
             time++;
             return time;
         }
-        if(1<=arr[current_head_r-1][current_head_c] && arr[current_head_r-1][current_head_c]<=4) {
-            is_alive = false;
-            time++;
-            return time;
-        }
 
         arr[current_head_r][current_head_c] = 1;
         current_head_r--;
@@ -39,6 +34,11 @@ int up(int distance) {
 
             current_tail_r += dir_r[dir];
             current_tail_c += dir_c[dir];
+        }
+        if(1<=arr[current_head_r][current_head_c] && arr[current_head_r][current_head_c]<=4) {
+            is_alive = false;
+            time++;
+            return time;
         }
         arr[current_head_r][current_head_c] = 5;
         time++;
@@ -54,11 +54,6 @@ int down(int distance) {
             time++;
             return time;
         }
-        if(1<=arr[current_head_r+1][current_head_c] && arr[current_head_r+1][current_head_c]<=4) {
-            is_alive = false;
-            time++;
-            return time;
-        }
 
         arr[current_head_r][current_head_c] = 2;
         current_head_r++;
@@ -68,6 +63,11 @@ int down(int distance) {
 
             current_tail_r += dir_r[dir];
             current_tail_c += dir_c[dir];
+        }
+        if(1<=arr[current_head_r][current_head_c] && arr[current_head_r][current_head_c]<=4) {
+            is_alive = false;
+            time++;
+            return time;
         }
         arr[current_head_r][current_head_c] = 5;
         time++;
@@ -83,11 +83,6 @@ int left(int distance) {
             time++;
             return time;
         }
-        if(1<=arr[current_head_r][current_head_c-1] && arr[current_head_r][current_head_c-1]<=4) {
-            is_alive = false;
-            time++;
-            return time;
-        }
 
         arr[current_head_r][current_head_c] = 3;
         current_head_c--;
@@ -97,6 +92,11 @@ int left(int distance) {
 
             current_tail_r += dir_r[dir];
             current_tail_c += dir_c[dir];
+        }
+        if(1<=arr[current_head_r][current_head_c] && arr[current_head_r][current_head_c]<=4) {
+            is_alive = false;
+            time++;
+            return time;
         }
         arr[current_head_r][current_head_c] = 5;
         time++;
@@ -112,11 +112,6 @@ int right(int distance) {
             time++;
             return time;
         }
-        if(1<=arr[current_head_r][current_head_c+1] && arr[current_head_r][current_head_c+1]<=4) {
-            is_alive = false;
-            time++;
-            return time;
-        }
 
         arr[current_head_r][current_head_c] = 4;
         current_head_c++;
@@ -126,6 +121,11 @@ int right(int distance) {
 
             current_tail_r += dir_r[dir];
             current_tail_c += dir_c[dir];
+        }
+        if(1<=arr[current_head_r][current_head_c] && arr[current_head_r][current_head_c]<=4) {
+            is_alive = false;
+            time++;
+            return time;
         }
         arr[current_head_r][current_head_c] = 5;
         time++;
@@ -171,8 +171,8 @@ int main() {
 //        cout << command << " " << distance << endl;
 //        cout << current_head_r << " " << current_head_c << endl;
 //        for(int j=1 ; j<=n ; j++) {
-//            for(int k=1 ; k<=n ; k++) {
-//                cout << arr[j][k] << " ";
+//            for(int l=1 ; l<=n ; l++) {
+//                cout << arr[j][l] << " ";
 //            }
 //            cout << "\n";
 //        }
