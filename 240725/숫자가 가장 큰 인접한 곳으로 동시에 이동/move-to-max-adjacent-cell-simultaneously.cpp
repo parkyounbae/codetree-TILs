@@ -17,6 +17,7 @@ void clear_board(int page) {
 }
 
 void tick(int from, int to) {
+    clear_board(to);
     for(int i=0 ; i<n ; i++) {
         for(int j=0 ; j<n ; j++) {
             if(ball[from][i][j] == 1) {
