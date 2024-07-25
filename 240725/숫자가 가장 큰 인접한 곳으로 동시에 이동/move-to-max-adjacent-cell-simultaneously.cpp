@@ -36,7 +36,7 @@ void tick(int from, int to) {
                 if(ball[to][i+dir_r[temp_dir]][j+dir_c[temp_dir]] == 0) {
                     ball[to][i+dir_r[temp_dir]][j+dir_c[temp_dir]] = 1;
                 } else {
-                    ball[to][i+dir_r[temp_dir]][j+dir_c[temp_dir]] = 0;
+                    ball[to][i+dir_r[temp_dir]][j+dir_c[temp_dir]]++;
                 }
             }
         }
