@@ -19,7 +19,10 @@ struct Ball {
     }
 
     bool operator<(const Ball s) const {
-        return this->priority < s.priority;
+        if(this->speed == s.speed) {
+            return this->priority > s.priority;
+        }
+        return this->speed > s.speed;
     }
 };
 
@@ -38,6 +41,16 @@ int get_result() {
     }
 
     return result;
+}
+
+void print_arr() {
+    cout << "\n";
+    for(int i=0 ; i<n ; i++) {
+        for(int j=0 ; j<n ; j++) {
+            cout << arr[i][j].size() << " ";
+        }
+        cout << "\n";
+    }
 }
 
 void tick() {
@@ -121,8 +134,10 @@ int main() {
         }
     }
 
+    // print_arr();
     for(int i=0 ; i<t ; i++) {
         tick();
+        // print_arr();
     }
 
     cout << get_result() << endl;
